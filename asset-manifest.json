@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/react-digraph-usage/static/css/main.af6aaea6.chunk.css",
-    "main.js": "/react-digraph-usage/static/js/main.520e4368.chunk.js",
-    "main.js.map": "/react-digraph-usage/static/js/main.520e4368.chunk.js.map",
+    "main.js": "/react-digraph-usage/static/js/main.9ae6ac5e.chunk.js",
+    "main.js.map": "/react-digraph-usage/static/js/main.9ae6ac5e.chunk.js.map",
     "runtime-main.js": "/react-digraph-usage/static/js/runtime-main.04401508.js",
     "runtime-main.js.map": "/react-digraph-usage/static/js/runtime-main.04401508.js.map",
-    "static/js/2.29871c01.chunk.js": "/react-digraph-usage/static/js/2.29871c01.chunk.js",
-    "static/js/2.29871c01.chunk.js.map": "/react-digraph-usage/static/js/2.29871c01.chunk.js.map",
+    "static/js/2.9451aa06.chunk.js": "/react-digraph-usage/static/js/2.9451aa06.chunk.js",
+    "static/js/2.9451aa06.chunk.js.map": "/react-digraph-usage/static/js/2.9451aa06.chunk.js.map",
     "index.html": "/react-digraph-usage/index.html",
-    "precache-manifest.5c4be2bae49a808e63479ab893c4916f.js": "/react-digraph-usage/precache-manifest.5c4be2bae49a808e63479ab893c4916f.js",
+    "precache-manifest.bea0c0292470ea52e25a838e72542617.js": "/react-digraph-usage/precache-manifest.bea0c0292470ea52e25a838e72542617.js",
     "service-worker.js": "/react-digraph-usage/service-worker.js",
     "static/css/main.af6aaea6.chunk.css.map": "/react-digraph-usage/static/css/main.af6aaea6.chunk.css.map",
-    "static/js/2.29871c01.chunk.js.LICENSE": "/react-digraph-usage/static/js/2.29871c01.chunk.js.LICENSE"
+    "static/js/2.9451aa06.chunk.js.LICENSE": "/react-digraph-usage/static/js/2.9451aa06.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.04401508.js",
-    "static/js/2.29871c01.chunk.js",
+    "static/js/2.9451aa06.chunk.js",
     "static/css/main.af6aaea6.chunk.css",
-    "static/js/main.520e4368.chunk.js"
+    "static/js/main.9ae6ac5e.chunk.js"
   ]
 }
