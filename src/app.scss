@@ -176,3 +176,32 @@ html,
 body {
   height: 100%;
 }
+
+.work-area {
+  display: flex;
+  width: 100%;
+}
+
+.graph-dropzone {
+  display: flex;
+  flex: 3;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 21px;
+
+  .select-node-type {
+    height: 20px;
+    margin: 50px;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+  }
+}

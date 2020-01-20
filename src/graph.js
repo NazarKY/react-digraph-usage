@@ -534,6 +534,42 @@ class Graph extends React.Component<IGraphProps, IGraphState> {
     }
   };
 
+  onDragStart = (event) => {
+    event
+      .dataTransfer
+      .setData('text/plain', event.target.innerText);
+  };
+
+  onDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  onDrop = (event) => {
+    const text = event
+      .dataTransfer
+      .getData('text');
+
+    const graph = this.state.graph;
+
+    const type =
+      nodeTypesNew[this.state.nodeCategoryType][this.state.nodeStrokeType];
+
+    const viewNode = {
+      id: Date.now(),
+      title: text,
+      type,
+      x: 0,
+      y: 0,
+    };
+
+    graph.nodes = [...graph.nodes, viewNode];
+    this.setState({ graph });
+
+    event
+      .dataTransfer
+      .clearData();
+  };
+
   /*
    * Render
    */
@@ -606,28 +642,139 @@ class Graph extends React.Component<IGraphProps, IGraphState> {
             </select>
           </div>
         </div>
-        <GraphView
-          ref={el => (this.GraphView = el)}
-          nodeKey={NODE_KEY}
-          nodes={nodes}
-          edges={edges}
-          selected={selected}
-          nodeTypes={NodeTypes}
-          nodeSubtypes={NodeSubtypes}
-          edgeTypes={EdgeTypes}
-          onSelectNode={this.onSelectNode}
-          onCreateNode={this.onCreateNode}
-          onUpdateNode={this.onUpdateNode}
-          onDeleteNode={this.onDeleteNode}
-          onSelectEdge={this.onSelectEdge}
-          onCreateEdge={this.onCreateEdge}
-          onSwapEdge={this.onSwapEdge}
-          onDeleteEdge={this.onDeleteEdge}
-          onUndo={this.onUndo}
-          onCopySelected={this.onCopySelected}
-          onPasteSelected={this.onPasteSelected}
-          layoutEngineType={this.state.layoutEngineType}
-        />
+        <div
+          className="work-area"
+        >
+          <div
+            className="graph-dropzone"
+            onDragOver={this.onDragOver}
+            onDrop={this.onDrop}
+          >
+            <GraphView
+              ref={el => (this.GraphView = el)}
+              nodeKey={NODE_KEY}
+              nodes={nodes}
+              edges={edges}
+              selected={selected}
+              nodeTypes={NodeTypes}
+              nodeSubtypes={NodeSubtypes}
+              edgeTypes={EdgeTypes}
+              onSelectNode={this.onSelectNode}
+              onCreateNode={this.onCreateNode}
+              onUpdateNode={this.onUpdateNode}
+              onDeleteNode={this.onDeleteNode}
+              onSelectEdge={this.onSelectEdge}
+              onCreateEdge={this.onCreateEdge}
+              onSwapEdge={this.onSwapEdge}
+              onDeleteEdge={this.onDeleteEdge}
+              onUndo={this.onUndo}
+              onCopySelected={this.onCopySelected}
+              onPasteSelected={this.onPasteSelected}
+              layoutEngineType={this.state.layoutEngineType}
+            />
+          </div>
+          <div
+            className="right-panel"
+          >
+            <select
+              className="select-node-type"
+              name="node-type-selector"
+              onChange={this.handleChangeNodeType}
+            >
+              <option value={'skinny'}>Analytic</option>
+              <option value={'special'}>Conditional</option>
+              <option value={'circle'}>Data Source</option>
+            </select>
+
+            {this.state.nodeCategoryType === 'skinny' ? (
+              <ul>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  analytic1
+                </span>
+                </li>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  analytic2
+                </span>
+                </li>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  analytic3
+                </span>
+                </li>
+              </ul>
+            ) : null}
+
+            {this.state.nodeCategoryType === 'special' ? (
+              <ul>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  conditional1
+                </span>
+                </li>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  conditional2
+                </span>
+                </li>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  conditional3
+                </span>
+                </li>
+              </ul>
+            ) : null}
+
+            {this.state.nodeCategoryType === 'circle' ? (
+              <ul>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  circle1
+                </span>
+                </li>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  cirlce2
+                </span>
+                </li>
+                <li>
+                <span
+                  draggable="true"
+                  onDragStart={this.onDragStart}
+                >
+                  circle3
+                </span>
+                </li>
+              </ul>
+            ) : null}
+
+          </div>
+        </div>
       </div>
     );
   }
