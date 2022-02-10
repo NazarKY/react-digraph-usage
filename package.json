@@ -12,7 +12,7 @@
     "react-scripts": "3.3.0",
     "react-digraph": "^6.5.0",
     "react-router-dom": "^5.1.2",
-    "node-sass": "^4.13"
+    "node-sass": "^7.0"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
